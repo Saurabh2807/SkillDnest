@@ -1,0 +1,14 @@
+
+{
+  "cwd": "backend",
+  "exec": "node server.js",
+  "watch": [
+    "server.js",
+    "config",
+    "middleware",
+    "models",
+    "routes",
+    "utils"
+  ],
+  "ext": "js,json"
+}

@@ -1,0 +1,530 @@
+* {
+    box-sizing: border-box;
+}
+
+.customer-register-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    background: #f7f9fc;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ================= LEFT IMAGE ================= */
+
+.register-visual {
+    position: relative;
+    width: 45%;
+    min-height: 100vh;
+    overflow: hidden;
+    color: white;
+}
+
+.register-bg-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1500&q=90");
+
+    background-size: cover;
+    background-position: center;
+
+    animation: registerImageZoom 15s ease-in-out infinite alternate;
+}
+
+.register-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5, 20, 15, 0.91),
+            rgba(10, 55, 38, 0.68),
+            rgba(0, 0, 0, 0.25)
+        );
+}
+
+
+/* HOME */
+
+.register-home-btn {
+    position: absolute;
+    top: 27px;
+    left: 30px;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 17px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.10);
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.register-home-btn:hover {
+    background: rgba(255,255,255,0.20);
+    transform: translateY(-2px);
+}
+
+
+/* LEFT CONTENT */
+
+.register-visual-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 520px;
+
+    padding: 145px 55px 50px;
+
+    animation: registerFadeUp 0.9s ease forwards;
+}
+
+.register-badge {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.13);
+    border: 1px solid rgba(255,255,255,0.20);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.register-visual-content h1 {
+    margin-top: 27px;
+
+    font-size: clamp(38px, 4vw, 57px);
+    line-height: 1.06;
+
+    letter-spacing: -1.8px;
+}
+
+.register-visual-content h1 span {
+    opacity: 0.78;
+}
+
+.register-visual-content > p {
+    margin-top: 23px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.82);
+}
+
+.register-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    margin-top: 32px;
+}
+
+.register-benefits div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 14px;
+}
+
+.register-benefits svg {
+    color: #ffffff;
+}
+
+
+/* ================= RIGHT FORM ================= */
+
+.register-area {
+    width: 55%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 45px;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(37,99,235,0.07),
+            transparent 35%
+        ),
+        #f8fafc;
+}
+
+.register-card {
+    width: 100%;
+    max-width: 650px;
+
+    padding: 32px 40px;
+
+    background: rgba(255,255,255,0.97);
+
+    border: 1px solid #e6eaf0;
+    border-radius: 25px;
+
+    box-shadow:
+        0 25px 65px rgba(15,23,42,0.10);
+
+    animation: registerCardEnter 0.8s ease forwards;
+}
+
+
+/* BRAND */
+
+.register-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.register-brand img {
+    width: 45px;
+    height: 45px;
+
+    object-fit: contain;
+    border-radius: 9px;
+}
+
+.register-brand h2 {
+    margin: 0;
+
+    font-size: 20px;
+    color: #172033;
+}
+
+.register-brand p {
+    margin-top: 3px;
+
+    font-size: 10px;
+    color: #98a2b3;
+}
+
+
+/* HEADING */
+
+.register-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.register-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #eef4ff;
+    color: #2563eb;
+}
+
+.register-heading span {
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: #2563eb;
+}
+
+.register-heading h2 {
+    margin-top: 3px;
+
+    font-size: 26px;
+    color: #172033;
+}
+
+.register-description {
+    margin: 10px 0 23px;
+
+    font-size: 13px;
+    color: #667085;
+}
+
+
+/* FORM */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #344054;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #d9dee8;
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fbfcfe;
+
+    font-size: 13px;
+
+    transition: 0.25s ease;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.07);
+}
+
+
+/* SERVICE PREFERENCE */
+
+.service-preference {
+    margin-top: 3px;
+    margin-bottom: 21px;
+}
+
+.service-preference > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #344054;
+}
+
+.service-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.service-options span {
+    padding: 8px 11px;
+
+    border-radius: 20px;
+
+    background: #f3f6fa;
+    border: 1px solid #e5eaf0;
+
+    color: #475467;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.service-options span:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-1px);
+}
+
+
+/* CREATE BUTTON */
+
+.create-account-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #172033;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.create-account-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(23,32,51,0.20);
+}
+
+
+/* LOGIN */
+
+.already-account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 21px;
+
+    font-size: 12px;
+
+    color: #667085;
+}
+
+.already-account button {
+    border: none;
+    background: transparent;
+
+    color: #2563eb;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* SECURITY */
+
+.register-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    margin-top: 17px;
+
+    color: #98a2b3;
+
+    font-size: 10px;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes registerImageZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes registerFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes registerCardEnter {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .customer-register-page {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .register-visual {
+        width: 100%;
+        min-height: 430px;
+    }
+
+    .register-visual-content {
+        padding: 120px 30px 40px;
+    }
+
+    .register-area {
+        width: 100%;
+        padding: 25px 18px;
+    }
+
+    .register-card {
+        padding: 28px 22px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .register-visual-content h1 {
+        font-size: 40px;
+    }
+}
