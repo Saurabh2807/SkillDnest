@@ -1,4 +1,4 @@
-# 🪺 SkilldNest (Skill D Nest)
+#  SkillDnest 
 
 > **"Local Skills. Trusted Services."**  
 > A Next-Generation, Cooperative-First Digital Gig Platform powered by AI.  
