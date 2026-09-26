@@ -16,7 +16,7 @@ import WorkerManagement from "./pages/WorkerManagement";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
             <Routes>
 
                 {/* =========================
